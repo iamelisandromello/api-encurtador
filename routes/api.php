@@ -7,23 +7,4 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::get("stats", function() {
-
-    $stats = [
-        [
-            "id"        => "23094",
-            "hits"      => 153,
-            "url"       => "http://www.example.com/blog", 
-            "shortUrl"  => "http://<host>[:<port>]/asdfeiba"
-        ],
-        [
-            "id"        => "23090",
-            "hits"      => 89,
-            "url"       => "http://www.example.com/rss",
-            "shortUrl"  => "http://<host>[:<port>]/asdfeibb"
-        ],        
-    ];
-
-    return $stats;
-
-});
+Route::get("stats", "StatsController@index");
