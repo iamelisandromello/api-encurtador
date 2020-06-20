@@ -7,5 +7,6 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 }); */
 
-Route::get("stats", "StatsController@index");
-Route::post("stats", "StatsController@store");
+Route::get("urls", "UrlsController@index");
+Route::post("urls", "UrlsController@store");
+Route::post("users", "UsersController@addUser");
