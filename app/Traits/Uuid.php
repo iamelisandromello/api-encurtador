@@ -17,9 +17,6 @@ trait Uuid
     protected function bootIfNotBooted()
     {
         parent::bootIfNotBooted();
-
-        $this->keyType = 'string';
-        $this->incrementing = false;
     }
 
     /**
