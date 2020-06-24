@@ -12,7 +12,7 @@ class UrlsController extends Controller
     public function link(Url $url) 
     {
         $url->increment('hit');
-        return redirect($to = $url['url'], $status = 301, $headers = [], $secure = null);
+        return redirect($url['url'], 301, [], null);
     }
     
     public function addUrl( $user_id, Request $request )
