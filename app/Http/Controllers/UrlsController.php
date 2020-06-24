@@ -12,7 +12,10 @@ class UrlsController extends Controller
     public function link(Url $url) 
     {
         $url->increment('hit');
-        return redirect($url['url'], 301, [], null);
+/*         return redirect($url['url'], 301, [], null); */
+        Cache::remember($url['url'], function () {
+            return redirect($url['url'], 301, [], null);
+        });
     }
     
     public function addUrl( $user_id, Request $request )
