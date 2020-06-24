@@ -14,13 +14,10 @@ class CreateUrlsTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->string('id', 100)->primary();
         });
 
         Schema::create('urls', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-
             $table->id();
             $table->integer('hit');
             $table->string('url', 256);
